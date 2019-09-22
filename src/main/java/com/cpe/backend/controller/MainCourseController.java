@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
+import com.cpe.backend.controller.CORS;
 
 
 import java.util.Collection;
@@ -16,7 +17,7 @@ import com.cpe.backend.repository.MainCourseRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = CORS.avaliable )
 @RestController
 public class MainCourseController {
 
@@ -26,6 +27,8 @@ public class MainCourseController {
     public MainCourseController(MainCourseRepository MainCourseRepository) {
         this.MainCourseRepository = MainCourseRepository;
     }
+
+    
 
     @GetMapping("/MainCourse")
     public Collection<MainCourse> MainCourses() {
@@ -37,7 +40,5 @@ public class MainCourseController {
         Optional<MainCourse> MainCourse = MainCourseRepository.findById(id);
         return MainCourse;
     }
-
-
 
 }

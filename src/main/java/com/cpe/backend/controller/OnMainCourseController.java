@@ -16,7 +16,7 @@ import com.cpe.backend.repository.OnMainCourseRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = CORS.avaliable)
 @RestController
 public class OnMainCourseController {
 

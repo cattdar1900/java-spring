@@ -16,7 +16,7 @@ import com.cpe.backend.repository.OnOptionRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = CORS.avaliable)
 @RestController
 public class OnOptionController {
 
