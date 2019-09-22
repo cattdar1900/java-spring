@@ -1,0 +1,28 @@
+# ตั้งค่า H2 Database in memory 
+# Code ในการ Run H2 Database 
+# http://localhost:9000/h2-console ->  JDBC URL ใส่ค่าเป็น jdbc:h2:mem:testdb
+spring:
+   jpa:
+      database: POSTGRESQL
+      show-sql: true
+      generate-ddl: true
+   hibernate:  
+      ddl-auto: update  
+   properties: 
+      hibernate: 
+         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+   database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+   datasource:  
+      platform: postgres
+      driver-class-name: org.postgresql.Driver
+      url: "jdbc:postgresql://localhost:5432/PrestoDataBase"  
+      username: postgres 
+      password: 22101095849x
+   
+
+server:  
+  port: 9000
