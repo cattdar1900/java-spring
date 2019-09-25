@@ -16,7 +16,7 @@ import com.cpe.backend.repository.RestaurantRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = CORS.avaliable)
+@CrossOrigin(origins = "'http://localhost:8100")
 @RestController
 public class RestaurantController {
 
