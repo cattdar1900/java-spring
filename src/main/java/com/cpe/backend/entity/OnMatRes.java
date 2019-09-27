@@ -25,17 +25,17 @@ public class OnMatRes {  //สิทธิการรักษา
   @Id 
   @SequenceGenerator(name="OnMatRes_seq",sequenceName="OnMatRes_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnMatRes_seq") 
-  @Column(name = "OnMatRess_ID", unique = true, nullable = true)
+  @Column(name = "OnMatRes_ID", unique = true, nullable = true)
   private @NonNull Long id;  
   @Getter @Setter
   private  String name ;  
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
-  @JoinColumn(name = "Restaurants_ID", insertable = true)
+  @JoinColumn(name = "Restaurant_ID", insertable = true)
   private Restaurant restaurant;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = RawMaterial.class)
-  @JoinColumn(name = "RawMaterials_ID", insertable = true)
+  @JoinColumn(name = "RawMaterial_ID", insertable = true)
   private RawMaterial rawMaterial;
 
   //all-1 -> Restaurant,RawMaterial
