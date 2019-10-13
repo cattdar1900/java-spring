@@ -37,6 +37,10 @@ public class MenuController {
         Optional<Menu> Menu = MenuRepository.findById(id);
         return Menu;
     }
+    @GetMapping("/Menu/restaurant/{id}")
+    public Collection<Menu> allMenu(@PathVariable Long id){
+        return MenuRepository.findMenuByResID(id);
+    }
 
 
 
