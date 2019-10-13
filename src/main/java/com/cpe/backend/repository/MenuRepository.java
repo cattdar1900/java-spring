@@ -14,6 +14,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface MenuRepository extends JpaRepository<Menu, Long> {
 
     Menu findById(long id);
-    @Query(value = "select * from menu where menu.menu_id = :id ",nativeQuery = true)
+    @Query(value = "select * from menu where menu.restaurant_id = :id ",nativeQuery = true)
     Collection<Menu> findMenuByResID(@Param("id") long id);
 }
