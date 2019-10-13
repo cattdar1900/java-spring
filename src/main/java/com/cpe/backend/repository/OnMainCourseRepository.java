@@ -18,6 +18,6 @@ public interface OnMainCourseRepository extends JpaRepository<OnMainCourse, Long
     "inner join on_res_main as o " +
    " on m.main_course_id = o.main_course_id " +
     " where o.restaurant_id = 1" , nativeQuery  =true)
-    Collection<MainCourseModel> findMainCourseByMarket(@Param("id") long id);
+    Collection<Object[]> findMainCourseByMarket(@Param("id") long id);
 
 }

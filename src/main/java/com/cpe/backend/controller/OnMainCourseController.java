@@ -39,7 +39,7 @@ public class OnMainCourseController {
         return OnMainCourse;
     }
     @GetMapping("/MainCourse/byRestaurant/{id}")
-    public Collection<MainCourseModel> checkMain(@PathVariable Long id){
+    public Collection<Object[]> checkMain(@PathVariable Long id){
         return OnMainCourseRepository.findMainCourseByMarket(id);
     }
 
