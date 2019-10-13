@@ -2,7 +2,7 @@ package com.cpe.backend.repository;
 
 import java.util.Collection;
 
-import com.cpe.backend.entity.MainCourse;
+import com.cpe.backend.Model.MainCourseModel;
 import com.cpe.backend.entity.OnMainCourse;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,6 +18,6 @@ public interface OnMainCourseRepository extends JpaRepository<OnMainCourse, Long
     "inner join on_res_main as o " +
    " on m.main_course_id = o.main_course_id " +
     " where o.restaurant_id = 1" , nativeQuery  =true)
-    Collection<MainCourse> findMainCourseByMarket(@Param("id") long id);
+    Collection<MainCourseModel> findMainCourseByMarket(@Param("id") long id);
 
 }

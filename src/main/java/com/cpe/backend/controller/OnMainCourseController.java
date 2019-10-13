@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.cpe.backend.entity.MainCourse;
+import com.cpe.backend.Model.MainCourseModel;
 import com.cpe.backend.entity.OnMainCourse;
 import com.cpe.backend.repository.OnMainCourseRepository;
 
@@ -39,7 +39,7 @@ public class OnMainCourseController {
         return OnMainCourse;
     }
     @GetMapping("/MainCourse/byRestaurant/{id}")
-    public Collection<MainCourse> checkMain(@PathVariable Long id){
+    public Collection<MainCourseModel> checkMain(@PathVariable Long id){
         return OnMainCourseRepository.findMainCourseByMarket(id);
     }
 
