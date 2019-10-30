@@ -64,9 +64,9 @@ public class Restaurant {  //สิทธิการรักษา
   //mappedBy  = "type"
   private Collection<OnMatRes> onMatres;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<TypeMenu> typemenu;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<TypeMenu> typemenu;
 
   
 

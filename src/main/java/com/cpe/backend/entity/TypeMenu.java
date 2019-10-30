@@ -40,9 +40,9 @@ public class TypeMenu {  //สิทธิการรักษา
   @JoinColumn(name = "TYPEFOOD_ID", insertable = true)
   private TypeFood typefood;
 
-  @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
-  @JoinColumn(name = "RESTAURANT_ID", insertable = true)
-  private Restaurant restaurant;
+//  @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
+//  @JoinColumn(name = "RESTAURANT_ID", insertable = true)
+//  private Restaurant restaurant;
 
   
  

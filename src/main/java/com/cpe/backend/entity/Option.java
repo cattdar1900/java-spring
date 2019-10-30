@@ -35,9 +35,9 @@ public class Option {  //สิทธิการรักษา
   @Getter @Setter
   private int price ;
   
-  @ManyToOne(fetch = FetchType.EAGER, targetEntity = MainCourse.class)
-  @JoinColumn(name = "MAINCOURSE_ID", insertable = true)
-  private MainCourse maincourse;
+//  @ManyToOne(fetch = FetchType.EAGER, targetEntity = MainCourse.class)
+//  @JoinColumn(name = "MAINCOURSE_ID", insertable = true)
+//  private MainCourse maincourse;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeFood.class)
   @JoinColumn(name = "TYPEFOOD_ID", insertable = true)

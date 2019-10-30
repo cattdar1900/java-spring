@@ -48,9 +48,9 @@ public class TypeFood {  //สิทธิการรักษา
   //mappedBy  = "type"
   private Collection<TypeMenu> typemenu;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<Menu> menu;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<Menu> menu;
 
   @OneToMany(fetch = FetchType.EAGER)
   //mappedBy  = "type"
