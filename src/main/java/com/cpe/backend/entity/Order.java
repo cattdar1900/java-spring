@@ -31,18 +31,12 @@ public class Order {  //สิทธิการรักษา
   @SequenceGenerator(name="Order_seq",sequenceName="Order_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Order_seq") 
   @Column(name = "Order_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
-  private  String cusName ;  
-  @Getter @Setter
+  private @NonNull Long id;
+  private  String cusName ;
   private String cusLocation ;
-  @Getter @Setter 
   private String transDistance ;
-  @Setter @Getter
-  private String status;
-  @Setter @Getter
+  private @NonNull String status;
   private Date date;
-
 
   //OnMenu 1 2 3
 
@@ -54,9 +48,9 @@ public class Order {  //สิทธิการรักษา
   @JoinColumn(name = "RIDER_ID", insertable = true)
   private Rider rider;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnOption> onOptions;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnOption> onOptions;
 
 
   

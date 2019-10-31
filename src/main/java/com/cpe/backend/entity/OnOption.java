@@ -26,19 +26,13 @@ public class OnOption {  //สิทธิการรักษา
   @SequenceGenerator(name="OnOption_seq",sequenceName="OnOption_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnOption_seq") 
   @Column(name = "OnOption_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
-  private  String name ;  
-  @Getter @Setter
-  private int amoutOption ;
-  @Getter @Setter
-  private int totalPirceOp;
-  @Getter @Setter
-  private int amoutMenu ;
-  @Getter @Setter
-  private int totalPirceMenu;
-  @Getter @Setter
-  private int totalPirce;
+  private @NonNull Long id;
+  private  String name ;
+  private int amountOption ;
+  private int totalPriceOp;
+  private int amountMenu ;
+  private int totalPriceMenu;
+  private int totalPrice;
 
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Option.class)

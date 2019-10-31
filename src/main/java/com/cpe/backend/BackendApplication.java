@@ -31,96 +31,136 @@ public class BackendApplication {
 			RawMaterialRepository rawMaterialRepository,
 			MenuRepository	menuRepository,
 			OrderRepository orderRepository,
+			OnMainCourseRepository onMainCourseRepository,
 			OnOptionRepository	onOptionRepository
 	) {
 		return args -> {
+//			Service
 			Stream.of("นางสาวใจดี ใจกว้าง", "นายขวัญเอย ขวัญมา").forEach(name -> {
 				Service service = new Service();
 				service.setName(name);
-				serviceRepository.save(service); // บันทึก Objcet ชื่อ Customer
+				serviceRepository.save(service);
 			});
-
+//			Rider
 			Stream.of("นายโจ๊ก ปลาแดก", "นายฟลุ๊คฟลุ๊ค บาท").forEach(name -> {
 				Rider rider = new Rider();
 				rider.setName(name);
-				riderRepository.save(rider); // บันทึก Objcet ชื่อ Customer
+				riderRepository.save(rider);
 			});
-
+//			TypeFood
 			Stream.of("ร้านอาหารจานเเดียว", "ร้านเครื่องดื่ม").forEach(name -> {
 				TypeFood typeFood = new TypeFood();
 				typeFood.setName(name);
-				typeFoodRepository.save(typeFood); // บันทึก Objcet ชื่อ Customer
+				typeFoodRepository.save(typeFood);
 			});
-
-			Stream.of("ลองดูเดะ", "กะเพราปั๊มหลังมอ", "ชาขุนพล").forEach(name -> {
-				Restaurant res = new Restaurant(); // สร้าง Object Customer
-				res.setName(name); // set ชื่อ (name) ให้ Object ชื่อ Customer
-				restaurantRepository.save(res); // บันทึก Objcet ชื่อ Customer
+//			Restaurant
+			Stream.of("ลองดูเดะ", "ชาขุนพล").forEach(name -> {
+				Restaurant res = new Restaurant();
+				res.setName(name);
+				restaurantRepository.save(res);
 			});
-
-			Stream.of("ข้าว", "ปั่น", "เย็น").forEach(name -> {
+//			MainCourse
+			Stream.of("ข้าว", "ชาเขียว").forEach(name -> {
 				MainCourse mainCourse = new MainCourse();
 				mainCourse.setName(name);
-				mainCourseRepository.save(mainCourse); // บันทึก Objcet ชื่อ Customer
+				mainCourseRepository.save(mainCourse);
 			});
-
-			Stream.of("ต้ม", "ผัด").forEach(name -> {
+//			TypeMenu
+			Stream.of("ต้ม", "ผัด", "ปั่น", "เย็น").forEach(name -> {
 				TypeMenu typeMenu = new TypeMenu();
 				typeMenu.setName(name);
-				typeMenuRepository.save(typeMenu); // บันทึก Objcet ชื่อ Customer
+				typeMenuRepository.save(typeMenu);
 			});
-
+//			RawMaterial
 			Stream.of("หมู", "ไก่", "หมึก", "ปลา").forEach(name -> {
 				RawMaterial rawMaterial = new RawMaterial();
 				rawMaterial.setName(name);
-				rawMaterialRepository.save(rawMaterial); // บันทึก Objcet ชื่อ Customer
+				rawMaterialRepository.save(rawMaterial);
+			});
+//			Option
+			Stream.of("ไข่ดาว", "ไข่เจียว","ไข่มุก").forEach(name -> {
+				Option option = new Option();
+				option.setName(name);
+				optionRepository.save(option);
 			});
 
-			Stream.of("ไข่ดาว", "ไข่เจียว").forEach(name -> {
-				Option option = new Option(); // สร้าง Object Customer
-				option.setName(name); // set ชื่อ (name) ให้ Object ชื่อ Customer
-				optionRepository.save(option); // บันทึก Objcet ชื่อ Customer
-			});
+//			Menu
+			Menu menu1 = new Menu();
+			menu1.setName("1");
+			menu1.setRestaurant(null);
+			menu1.setMaincourse(null);
+			menu1.setTypemenu(null);
+			menuRepository.save(menu1);
 
-			Stream.of("ไข่ดาว", "ไข่เจียว").forEach(name -> {
-				Menu menu = new Menu(); // สร้าง Object Customer
-				menu.setName(name); // set ชื่อ (name) ให้ Object ชื่อ Customer
-				menuRepository.save(menu); // บันทึก Objcet ชื่อ Customer
-			});
+			Menu menu2 = new Menu();
+			menu2.setName("2");
+			menu2.setRestaurant(null);
+			menu2.setMaincourse(null);
+			menu2.setTypemenu(null);
+			menuRepository.save(menu2);
 
-//			Stream.of("ลูกค้า1").forEach(name -> {
-//				Order order = new Order(); // สร้าง Object Customer
-//				order.setCusName(name); // set ชื่อ (name) ให้ Object ชื่อ Customer
-//				order.setStatus("กำลังดำเนินการ");
-//				order.setService(null);
-//				orderRepository.save(order); // บันทึก Objcet ชื่อ Customer
-//			});
+			Menu menu3 = new Menu();
+			menu3.setName("3");
+			menu3.setRestaurant(null);
+			menu3.setMaincourse(null);
+			menu3.setTypemenu(null);
+			menuRepository.save(menu3);
 
-			Order order1 = new Order(); // สร้าง Object Customer
-			order1.setCusName("ลูกค้า1"); // set ชื่อ (name) ให้ Object ชื่อ Customer
+//			Order
+			Order order1 = new Order();
+			order1.setCusName("ลูกค้า1");
 			order1.setStatus("รอดำเนินการ");
 			order1.setService(null);
-			orderRepository.save(order1); // บันทึก Objcet ชื่อ Customer
+			orderRepository.save(order1);
 
-			Order order2 = new Order(); // สร้าง Object Customer
-			order2.setCusName("ลูกค้า2"); // set ชื่อ (name) ให้ Object ชื่อ Customer
+			Order order2 = new Order();
+			order2.setCusName("ลูกค้า2");
 			order2.setStatus("กำลังดำเนินการ");
 			order2.setService(null);
-			orderRepository.save(order2); // บันทึก Objcet ชื่อ Customer
+			orderRepository.save(order2);
 
-			Order order3 = new Order(); // สร้าง Object Customer
-			order3.setCusName("ลูกค้า3"); // set ชื่อ (name) ให้ Object ชื่อ Customer
+			Order order3 = new Order();
+			order3.setCusName("ลูกค้า3");
 			order3.setStatus("ดำเนินการเสร็จสิ้น");
 			order3.setService(null);
 			orderRepository.save(order3);
 
-//			OnOption onOption = new OnOption(); // สร้าง Object Customer
-//			onOption.setAmoutMenu(30); // set ชื่อ (name) ให้ Object ชื่อ Customer
-//			onOption.setAmoutOption(5);
-//			onOption.setTotalPirceMenu(30);
-//			onOption.setTotalPirceOp(5);
-//			onOption.setMenu();
-//			orderRepository.save(order); // บันทึก Objcet ชื่อ Customer
+
+//			OnMainCourse
+			OnMainCourse onMainCourse1 = new OnMainCourse();
+			onMainCourse1.setName("1");
+			onMainCourse1.setMaincourse(null);
+			onMainCourse1.setOption(null);
+			onMainCourseRepository.save(onMainCourse1);
+
+			OnMainCourse onMainCourse2 = new OnMainCourse();
+			onMainCourse2.setName("1");
+			onMainCourse2.setMaincourse(null);
+			onMainCourse2.setOption(null);
+			onMainCourseRepository.save(onMainCourse2);
+
+
+			OnMainCourse onMainCourse3 = new OnMainCourse();
+			onMainCourse3.setName("1");
+			onMainCourse3.setMaincourse(null);
+			onMainCourse3.setOption(null);
+			onMainCourseRepository.save(onMainCourse3);
+
+			OnMainCourse onMainCourse4 = new OnMainCourse();
+			onMainCourse4.setName("1");
+			onMainCourse4.setMaincourse(null);
+			onMainCourse4.setOption(null);
+			onMainCourseRepository.save(onMainCourse4);
+
+
+			OnMainCourse onMainCourse5 = new OnMainCourse();
+			onMainCourse5.setName("1");
+			onMainCourse5.setMaincourse(null);
+			onMainCourse5.setOption(null);
+			onMainCourseRepository.save(onMainCourse5);
+
+
+
 		};
 	}
 

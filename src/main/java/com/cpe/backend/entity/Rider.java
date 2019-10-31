@@ -27,19 +27,15 @@ public class Rider {  //สิทธิการรักษา
   @SequenceGenerator(name="RIDER_SEQ",sequenceName="RIDER_SEQ")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="RIDER_SEQ") 
   @Column(name = "Rider_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
-  private  String name ;  
-  @Getter @Setter
+  private @NonNull Long id;
+  private  String name ;
   private String username ;
-  @Getter @Setter 
   private String password ;
-  @Getter @Setter 
   private int income ;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<Order> order;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<Order> order;
 
 
   //relation with order

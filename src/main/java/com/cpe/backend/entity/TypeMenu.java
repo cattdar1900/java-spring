@@ -22,19 +22,18 @@ import javax.persistence.Entity;
 @Data  
 @NoArgsConstructor  
 @Table(name = "TypeMenu")
-public class TypeMenu {  //สิทธิการรักษา
+public class TypeMenu {
       
   @Id 
   @SequenceGenerator(name="TypeMenu_seq",sequenceName="TypeMenu_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TypeMenu_seq") 
   @Column(name = "TypeMenu_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<Menu> menu;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<Menu> menu;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeFood.class)
   @JoinColumn(name = "TYPEFOOD_ID", insertable = true)
