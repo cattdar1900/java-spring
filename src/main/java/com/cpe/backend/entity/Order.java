@@ -15,6 +15,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.Timer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,7 +38,12 @@ public class Order {  //สิทธิการรักษา
   private String cusLocation ;
   @Getter @Setter 
   private String transDistance ;
-  
+  @Setter @Getter
+  private String status;
+  @Setter @Getter
+  private Date date;
+
+
   //OnMenu 1 2 3
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Service.class)

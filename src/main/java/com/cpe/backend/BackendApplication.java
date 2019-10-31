@@ -88,12 +88,31 @@ public class BackendApplication {
 				menuRepository.save(menu); // บันทึก Objcet ชื่อ Customer
 			});
 
-			Stream.of("ลูกค้า1").forEach(name -> {
-				Order order = new Order(); // สร้าง Object Customer
-				order.setCusName(name); // set ชื่อ (name) ให้ Object ชื่อ Customer
-				orderRepository.save(order); // บันทึก Objcet ชื่อ Customer
-			});
+//			Stream.of("ลูกค้า1").forEach(name -> {
+//				Order order = new Order(); // สร้าง Object Customer
+//				order.setCusName(name); // set ชื่อ (name) ให้ Object ชื่อ Customer
+//				order.setStatus("กำลังดำเนินการ");
+//				order.setService(null);
+//				orderRepository.save(order); // บันทึก Objcet ชื่อ Customer
+//			});
 
+			Order order1 = new Order(); // สร้าง Object Customer
+			order1.setCusName("ลูกค้า1"); // set ชื่อ (name) ให้ Object ชื่อ Customer
+			order1.setStatus("รอดำเนินการ");
+			order1.setService(null);
+			orderRepository.save(order1); // บันทึก Objcet ชื่อ Customer
+
+			Order order2 = new Order(); // สร้าง Object Customer
+			order2.setCusName("ลูกค้า2"); // set ชื่อ (name) ให้ Object ชื่อ Customer
+			order2.setStatus("กำลังดำเนินการ");
+			order2.setService(null);
+			orderRepository.save(order2); // บันทึก Objcet ชื่อ Customer
+
+			Order order3 = new Order(); // สร้าง Object Customer
+			order3.setCusName("ลูกค้า3"); // set ชื่อ (name) ให้ Object ชื่อ Customer
+			order3.setStatus("ดำเนินการเสร็จสิ้น");
+			order3.setService(null);
+			orderRepository.save(order3);
 
 //			OnOption onOption = new OnOption(); // สร้าง Object Customer
 //			onOption.setAmoutMenu(30); // set ชื่อ (name) ให้ Object ชื่อ Customer
