@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.stream.Stream;
 
 import com.cpe.backend.entity.*;
@@ -31,8 +33,9 @@ public class BackendApplication {
 			RawMaterialRepository rawMaterialRepository,
 			MenuRepository	menuRepository,
 			OrderRepository orderRepository,
-			OnMainCourseRepository onMainCourseRepository,
-			OnOptionRepository	onOptionRepository
+			OnOptionRepository	onOptionRepository,
+			OnMainCourseRepository onMainCourseRepository
+
 	) {
 		return args -> {
 //		Service
@@ -133,6 +136,9 @@ public class BackendApplication {
 //			Menu
 			Menu menu1 = new Menu();
 			menu1.setName("1");
+			menu1.setPrice(30);
+			menu1.setEx(false);
+			menu1.setPriceEx(0);
 			menu1.setRestaurant(res1);
 			menu1.setMaincourse(mainCourse1);
 			menu1.setTypemenu(typeMenu1);
@@ -140,23 +146,46 @@ public class BackendApplication {
 
 			Menu menu2 = new Menu();
 			menu2.setName("2");
-			menu2.setRestaurant(res2);
-			menu2.setMaincourse(mainCourse2);
-			menu2.setTypemenu(typeMenu2);
+			menu2.setPrice(30);
+			menu2.setEx(true);
+			menu2.setPriceEx(5);
+			menu2.setRestaurant(res1);
+			menu2.setMaincourse(mainCourse1);
+			menu2.setTypemenu(typeMenu1);
 			menuRepository.save(menu2);
 
 			Menu menu3 = new Menu();
-			menu3.setName("3");
+			menu3.setName("2");
+			menu3.setPrice(40);
+			menu3.setEx(false);
+			menu3.setPriceEx(0);
 			menu3.setRestaurant(res2);
 			menu3.setMaincourse(mainCourse2);
-			menu3.setTypemenu(typeMenu3);
+			menu3.setTypemenu(typeMenu2);
 			menuRepository.save(menu3);
 
+			Menu menu4 = new Menu();
+			menu4.setName("3");
+			menu4.setPrice(40);
+			menu4.setEx(true);
+			menu4.setPriceEx(5);
+			menu4.setRestaurant(res2);
+			menu4.setMaincourse(mainCourse2);
+			menu4.setTypemenu(typeMenu3);
+			menuRepository.save(menu4);
+
 //			Order
+			//extra
 			Order order1 = new Order();
-			order1.setCusName("ลูกค้า1");
+			order1.setCusName("ลูกค้า1-extra");
 			order1.setStatus("รอดำเนินการ");
 			order1.setService(service1);
+			order1.setTransDistance(1.0);
+			order1.setTotalPriceDistance(5);
+			order1.setTotalPriceTrans(30);
+			order1.setTotalPriceFood(80);
+			order1.setNetPrice(115);
+			order1.setDate(null);
 			order1.setRider(null);
 			orderRepository.save(order1);
 
@@ -166,11 +195,17 @@ public class BackendApplication {
 			order2.setService(service2);
 			order2.setRider(null);
 			orderRepository.save(order2);
-
+			//extra
 			Order order3 = new Order();
-			order3.setCusName("ลูกค้า3");
+			order3.setCusName("ลูกค้า3-extra");
 			order3.setStatus("กำลังดำเนินการ");
 			order3.setService(service1);
+			order3.setTransDistance(1.0);
+			order3.setTotalPriceDistance(5);
+			order3.setTotalPriceTrans(30);
+			order3.setTotalPriceFood(80);
+			order3.setNetPrice(115);
+			order3.setDate(null);
 			order3.setRider(rider1);
 			orderRepository.save(order3);
 
@@ -185,6 +220,14 @@ public class BackendApplication {
 			order5.setCusName("ลูกค้า5");
 			order5.setStatus("ดำเนินการเสร็จสิ้น");
 			order5.setService(service1);
+			order5.setTransDistance(1.0);
+			order5.setTotalPriceDistance(5);
+			order5.setTotalPriceTrans(30);
+			order5.setTotalPriceFood(80);
+			order5.setNetPrice(115);
+			String sDate1 = "10/5/2019";
+			Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
+			order5.setDate(date1);
 			order5.setRider(rider1);
 			orderRepository.save(order5);
 
@@ -194,52 +237,109 @@ public class BackendApplication {
 			order6.setService(service2);
 			order6.setRider(rider2);
 			orderRepository.save(order6);
+
 //		onOption
-//			OnOption onOption1 = new OnOption();
-//			onOption1.setMenu(menu1);
-//			onOption1.setAmountMenu(1);
-//			onOption1.setAmountOption(1);
-//			onOption1.setOption();
-//			onOption1.setOrder();
-//			onOption1.setTotalPrice(35);
-//			onOption1.setTotalPriceMenu(30);
-//			onOption1.setTotalPriceOp(5);
+			//order1
+			OnOption onOption1 = new OnOption();
+			onOption1.setOrder(order1);
+			onOption1.setMenu(menu1);
+			onOption1.setOption(option1);
+			onOption1.setAmountMenu(1);
+			onOption1.setAmountOption(1);
+			onOption1.setTotalPrice(35);
+			onOption1.setTotalPriceMenu(30);
+			onOption1.setTotalPriceOp(5);
+			onOptionRepository.save(onOption1);
+
+			OnOption onOption2 = new OnOption();
+			onOption2.setOrder(order1);
+			onOption2.setMenu(menu3);
+			onOption2.setOption(option3);
+			onOption2.setAmountMenu(1);
+			onOption2.setAmountOption(1);
+			onOption2.setTotalPrice(45);
+			onOption2.setTotalPriceMenu(40);
+			onOption2.setTotalPriceOp(5);
+			onOptionRepository.save(onOption2);
+			//order3
+			OnOption onOption3 = new OnOption();
+			onOption3.setOrder(order3);
+			onOption3.setMenu(menu1);
+			onOption3.setOption(option1);
+			onOption3.setAmountMenu(1);
+			onOption3.setAmountOption(1);
+			onOption3.setTotalPrice(35);
+			onOption3.setTotalPriceMenu(30);
+			onOption3.setTotalPriceOp(5);
+			onOptionRepository.save(onOption3);
+
+			OnOption onOption4 = new OnOption();
+			onOption4.setOrder(order3);
+			onOption4.setMenu(menu3);
+			onOption4.setOption(option3);
+			onOption4.setAmountMenu(1);
+			onOption4.setAmountOption(1);
+			onOption4.setTotalPrice(45);
+			onOption4.setTotalPriceMenu(40);
+			onOption4.setTotalPriceOp(5);
+			onOptionRepository.save(onOption4);
+
+			//order5
+			OnOption onOption5 = new OnOption();
+			onOption5.setOrder(order5);
+			onOption5.setMenu(menu1);
+			onOption5.setOption(option1);
+			onOption5.setAmountMenu(1);
+			onOption5.setAmountOption(1);
+			onOption5.setTotalPrice(35);
+			onOption5.setTotalPriceMenu(30);
+			onOption5.setTotalPriceOp(5);
+			onOptionRepository.save(onOption5);
+
+			OnOption onOption6 = new OnOption();
+			onOption6.setOrder(order5);
+			onOption6.setMenu(menu3);
+			onOption6.setOption(option3);
+			onOption6.setAmountMenu(1);
+			onOption6.setAmountOption(1);
+			onOption6.setTotalPrice(45);
+			onOption6.setTotalPriceMenu(40);
+			onOption6.setTotalPriceOp(5);
+			onOptionRepository.save(onOption6);
 
 //		OnMainCourse
-			OnMainCourse onMainCourse1 = new OnMainCourse();
-			onMainCourse1.setName("1");
-			onMainCourse1.setMaincourse(null);
-			onMainCourse1.setOption(null);
-			onMainCourseRepository.save(onMainCourse1);
-
-			OnMainCourse onMainCourse2 = new OnMainCourse();
-			onMainCourse2.setName("2");
-			onMainCourse2.setMaincourse(null);
-			onMainCourse2.setOption(null);
-			onMainCourseRepository.save(onMainCourse2);
-
-
-			OnMainCourse onMainCourse3 = new OnMainCourse();
-			onMainCourse3.setName("3");
-			onMainCourse3.setMaincourse(null);
-			onMainCourse3.setOption(null);
-			onMainCourseRepository.save(onMainCourse3);
-
-			OnMainCourse onMainCourse4 = new OnMainCourse();
-			onMainCourse4.setName("4");
-			onMainCourse4.setMaincourse(null);
-			onMainCourse4.setOption(null);
-			onMainCourseRepository.save(onMainCourse4);
-
-
-			OnMainCourse onMainCourse5 = new OnMainCourse();
-			onMainCourse5.setName("5");
-			onMainCourse5.setMaincourse(null);
-			onMainCourse5.setOption(null);
-			onMainCourseRepository.save(onMainCourse5);
-
-
-
+//			OnMainCourse onMainCourse1 = new OnMainCourse();
+//			onMainCourse1.setName("1");
+//			onMainCourse1.setMaincourse(null);
+//			onMainCourse1.setOption(null);
+//			onMainCourseRepository.save(onMainCourse1);
+//
+//			OnMainCourse onMainCourse2 = new OnMainCourse();
+//			onMainCourse2.setName("2");
+//			onMainCourse2.setMaincourse(null);
+//			onMainCourse2.setOption(null);
+//			onMainCourseRepository.save(onMainCourse2);
+//
+//
+//			OnMainCourse onMainCourse3 = new OnMainCourse();
+//			onMainCourse3.setName("3");
+//			onMainCourse3.setMaincourse(null);
+//			onMainCourse3.setOption(null);
+//			onMainCourseRepository.save(onMainCourse3);
+//
+//			OnMainCourse onMainCourse4 = new OnMainCourse();
+//			onMainCourse4.setName("4");
+//			onMainCourse4.setMaincourse(null);
+//			onMainCourse4.setOption(null);
+//			onMainCourseRepository.save(onMainCourse4);
+//
+//
+//			OnMainCourse onMainCourse5 = new OnMainCourse();
+//			onMainCourse5.setName("5");
+//			onMainCourse5.setMaincourse(null);
+//			onMainCourse5.setOption(null);
+//			onMainCourseRepository.save(onMainCourse5);
+//
 		};
 	}
 

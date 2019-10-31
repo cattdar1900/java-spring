@@ -34,7 +34,11 @@ public class Order {  //สิทธิการรักษา
   private @NonNull Long id;
   private  String cusName ;
   private String cusLocation ;
-  private String transDistance ;
+  private double transDistance ;
+  private int totalPriceDistance;
+  private int totalPriceFood;
+  private int totalPriceTrans;
+  private int netPrice;
   private @NonNull String status;
   private Date date;
 
