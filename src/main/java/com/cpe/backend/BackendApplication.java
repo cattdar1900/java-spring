@@ -215,9 +215,9 @@ public class BackendApplication {
 			order4.setService(service2);
 			order4.setRider(rider2);
 			orderRepository.save(order4);
-
+			//extra
 			Order order5 = new Order();
-			order5.setCusName("ลูกค้า5");
+			order5.setCusName("ลูกค้า5-extra");
 			order5.setStatus("ดำเนินการเสร็จสิ้น");
 			order5.setService(service1);
 			order5.setTransDistance(1.0);
