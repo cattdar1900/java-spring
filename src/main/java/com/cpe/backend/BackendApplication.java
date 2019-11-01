@@ -157,15 +157,7 @@ public class BackendApplication {
 
 
 //			Menu
-			Menu menu1 = new Menu();
-			menu1.setName("1");
-			menu1.setPrice(30);
-			menu1.setEx(false);
-			menu1.setPriceEx(0);
-			menu1.setRestaurant(res1);
-			menu1.setMaincourse(mainCourse1);
-			menu1.setTypemenu(typeMenu1);
-			menuRepository.save(menu1);
+
 
 			Menu menu2 = new Menu();
 			menu2.setName("2");
@@ -263,16 +255,7 @@ public class BackendApplication {
 
 //		onOption
 			//order1
-			OnOption onOption1 = new OnOption();
-			onOption1.setOrder(order1);
-			onOption1.setMenu(menu1);
-			onOption1.setOption(option1);
-			onOption1.setAmountMenu(1);
-			onOption1.setAmountOption(1);
-			onOption1.setTotalPrice(35);
-			onOption1.setTotalPriceMenu(30);
-			onOption1.setTotalPriceOp(5);
-			onOptionRepository.save(onOption1);
+
 
 			OnOption onOption2 = new OnOption();
 			onOption2.setOrder(order1);
@@ -285,16 +268,7 @@ public class BackendApplication {
 			onOption2.setTotalPriceOp(5);
 			onOptionRepository.save(onOption2);
 			//order3
-			OnOption onOption3 = new OnOption();
-			onOption3.setOrder(order3);
-			onOption3.setMenu(menu1);
-			onOption3.setOption(option1);
-			onOption3.setAmountMenu(1);
-			onOption3.setAmountOption(1);
-			onOption3.setTotalPrice(35);
-			onOption3.setTotalPriceMenu(30);
-			onOption3.setTotalPriceOp(5);
-			onOptionRepository.save(onOption3);
+
 
 			OnOption onOption4 = new OnOption();
 			onOption4.setOrder(order3);
@@ -307,16 +281,7 @@ public class BackendApplication {
 			onOption4.setTotalPriceOp(5);
 			onOptionRepository.save(onOption4);
 			//order5
-			OnOption onOption5 = new OnOption();
-			onOption5.setOrder(order5);
-			onOption5.setMenu(menu1);
-			onOption5.setOption(option1);
-			onOption5.setAmountMenu(1);
-			onOption5.setAmountOption(1);
-			onOption5.setTotalPrice(35);
-			onOption5.setTotalPriceMenu(30);
-			onOption5.setTotalPriceOp(5);
-			onOptionRepository.save(onOption5);
+
 
 			OnOption onOption6 = new OnOption();
 			onOption6.setOrder(order5);
@@ -411,29 +376,7 @@ public class BackendApplication {
 			onMatResRepository.save(onMatRes4);
 
 //		OnMenu
-			OnMenu onMenu1 = new OnMenu();
-			onMenu1.setName("1");
-			onMenu1.setMenu(menu1);
-			onMenu1.setRawmaterial(rawMaterial1);
-			onMenuRepository.save(onMenu1);
 
-			OnMenu onMenu2 = new OnMenu();
-			onMenu2.setName("2");
-			onMenu2.setMenu(menu1);
-			onMenu2.setRawmaterial(rawMaterial2);
-			onMenuRepository.save(onMenu2);
-
-			OnMenu onMenu3 = new OnMenu();
-			onMenu3.setName("3");
-			onMenu3.setMenu(menu1);
-			onMenu3.setRawmaterial(rawMaterial3);
-			onMenuRepository.save(onMenu3);
-
-			OnMenu onMenu4 = new OnMenu();
-			onMenu4.setName("4");
-			onMenu4.setMenu(menu1);
-			onMenu4.setRawmaterial(rawMaterial4);
-			onMenuRepository.save(onMenu4);
 
 			OnMenu onMenu5 = new OnMenu();
 			onMenu5.setName("5");
