@@ -46,19 +46,27 @@ public class BackendApplication {
 //		Service
 			Service service1 = new Service();
 			service1.setName("นางสาวใจดี ใจกว้าง");
+			service1.setId("beam");
+			service1.setPassword("1234");
 			serviceRepository.save(service1);
 
 			Service service2 = new Service();
 			service2.setName("นายขวัญเอย ขวัญมา");
+			service2.setId("beam2");
+			service2.setPassword("1234");
 			serviceRepository.save(service2);
 
 //		Rider
 			Rider rider1 = new Rider();
 			rider1.setName("นายโจ๊ก ปลาแดก");
+			rider1.setId("joke");
+			rider1.setPassword("1234");
 			riderRepository.save(rider1);
 
 			Rider rider2 = new Rider();
 			rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
+			rider2.setId("joker");
+			rider2.setPassword("1234");
 			riderRepository.save(rider2);
 
 //		TypeFood

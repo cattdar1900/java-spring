@@ -24,7 +24,6 @@ import javax.persistence.Entity;
 public class Service {  //สิทธิการรักษา
       
   @Id 
-  
   @Column(name = "Service_ID", unique = true, nullable = true)
   private @NonNull String id;
   private  String name ;
