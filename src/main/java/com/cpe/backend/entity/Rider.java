@@ -24,10 +24,8 @@ import javax.persistence.Entity;
 public class Rider {  //สิทธิการรักษา
       
   @Id 
-  @SequenceGenerator(name="RIDER_SEQ",sequenceName="RIDER_SEQ")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="RIDER_SEQ") 
   @Column(name = "Rider_ID", unique = true, nullable = true)
-  private @NonNull Long id;
+  private @NonNull String id;
   private  String name ;
   private String username ;
   private String password ;

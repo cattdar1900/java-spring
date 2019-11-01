@@ -29,14 +29,14 @@ public class TypeMenu {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TypeMenu_seq") 
   @Column(name = "TypeMenu_ID", unique = true, nullable = true)
   private @NonNull Long id;
-  private  String name ;  
+  private  String nameT ;  
 
 //  @OneToMany(fetch = FetchType.EAGER)
 //  //mappedBy  = "type"
 //  private Collection<Menu> menu;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeFood.class)
-  @JoinColumn(name = "TYPEFOOD_ID", insertable = true)
+  @JoinColumn(name = "TYPEFOOD_ID_TM", insertable = true)
   private TypeFood typefood;
 
 //  @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)

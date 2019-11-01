@@ -11,4 +11,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface TypeFoodRepository extends JpaRepository<TypeFood, Long> {
 
     TypeFood findById(long id);
+    
 }

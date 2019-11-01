@@ -26,9 +26,9 @@ public class TypeFood {  //สิทธิการรักษา
   @Id 
   @SequenceGenerator(name="typeFood_seq",sequenceName="typeFood_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="typeFood_seq") 
-  @Column(name = "typeFoods_ID", unique = true, nullable = true)
+  @Column(name = "typeFoods_ID_TF", unique = true, nullable = true)
   private @NonNull Long id;
-  private  String name ;  
+  private  String nameTF ;  
   
 
 

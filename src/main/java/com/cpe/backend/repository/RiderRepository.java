@@ -1,6 +1,6 @@
 package com.cpe.backend.repository;
 
-
+import java.util.Optional;
 
 import com.cpe.backend.entity.Rider;
 
@@ -10,6 +10,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface RiderRepository extends JpaRepository<Rider, Long> {
 
-    Rider findById(long id);
-    Rider findByName(String name);
+    Optional<Rider> findById(String id);
 }

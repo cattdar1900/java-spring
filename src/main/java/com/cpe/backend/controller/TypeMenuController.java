@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.cpe.backend.Model.TypeMenuModel;
 import com.cpe.backend.entity.TypeMenu;
 import com.cpe.backend.repository.TypeMenuRepository;
 
@@ -36,6 +37,11 @@ public class TypeMenuController {
     public Optional<TypeMenu> TypeMenus(@PathVariable Long id) {
         Optional<TypeMenu> TypeMenu = TypeMenuRepository.findById(id);
         return TypeMenu;
+    }
+
+    @GetMapping("/TypeMenuByMainCourse/{id}")
+    public Collection<Object[]> typeMenuModel(@PathVariable Long id){
+        return TypeMenuRepository.findMenuByResIDs(id);
     }
 
 

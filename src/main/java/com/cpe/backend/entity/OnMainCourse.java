@@ -27,7 +27,7 @@ public class OnMainCourse {  //สิทธิการรักษา
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnMainCourse_seq") 
   @Column(name = "OnMainCourse_ID", unique = true, nullable = true)
   private @NonNull Long id;
-  private  String name ;  
+  private  String nameM ;  
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = MainCourse.class)
   @JoinColumn(name = "MAINCOURSE_ID", insertable = true)

@@ -45,29 +45,33 @@ public class BackendApplication {
 		return args -> {
 //		Service
 			Service service1 = new Service();
+			service1.setId("asdasd");
 			service1.setName("นางสาวใจดี ใจกว้าง");
 			serviceRepository.save(service1);
 
 			Service service2 = new Service();
+			service2.setId("asdsdasasd");
 			service2.setName("นายขวัญเอย ขวัญมา");
 			serviceRepository.save(service2);
 
 //		Rider
 			Rider rider1 = new Rider();
+			rider1.setId("Adasd");
 			rider1.setName("นายโจ๊ก ปลาแดก");
 			riderRepository.save(rider1);
 
 			Rider rider2 = new Rider();
+			rider2.setId("adasasd");
 			rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
 			riderRepository.save(rider2);
 
 //		TypeFood
 			TypeFood typeFood1 = new TypeFood();
-			typeFood1.setName("ร้านอาหารจานเเดียว");
+			typeFood1.setNameTF("ร้านอาหารจานเเดียว");
 			typeFoodRepository.save(typeFood1);
 
 			TypeFood typeFood2 = new TypeFood();
-			typeFood2.setName("ร้านเครื่องดื่ม");
+			typeFood2.setNameTF("ร้านเครื่องดื่ม");
 			typeFoodRepository.save(typeFood2);
 
 //		Restaurant
@@ -90,22 +94,22 @@ public class BackendApplication {
 
 //		TypeMenu
 			TypeMenu typeMenu1 = new TypeMenu();
-			typeMenu1.setName("ผัด");
+			typeMenu1.setNameT("ผัด");
 			typeMenu1.setTypefood(typeFood1);
 			typeMenuRepository.save(typeMenu1);
 
 			TypeMenu typeMenu2 = new TypeMenu();
-			typeMenu2.setName("ปั่น");
+			typeMenu2.setNameT("ปั่น");
 			typeMenu2.setTypefood(typeFood2);
 			typeMenuRepository.save(typeMenu2);
 
 			TypeMenu typeMenu3 = new TypeMenu();
-			typeMenu3.setName("เย็น");
+			typeMenu3.setNameT("เย็น");
 			typeMenu3.setTypefood(typeFood2);
 			typeMenuRepository.save(typeMenu3);
 
 			TypeMenu typeMenu4 = new TypeMenu();
-			typeMenu4.setName("เย็น");
+			typeMenu4.setNameT("ร้อน");
 			typeMenu4.setTypefood(typeFood2);
 			typeMenuRepository.save(typeMenu4);
 
@@ -296,39 +300,39 @@ public class BackendApplication {
 
 //		OnMainCourse
 			OnMainCourse onMainCourse1 = new OnMainCourse();
-			onMainCourse1.setName("1");
+			onMainCourse1.setNameM("1");
 			onMainCourse1.setMaincourse(mainCourse1);
 			onMainCourse1.setOption(option1);
 			onMainCourseRepository.save(onMainCourse1);
 
 			OnMainCourse onMainCourse2 = new OnMainCourse();
-			onMainCourse2.setName("2");
+			onMainCourse2.setNameM("2");
 			onMainCourse2.setMaincourse(mainCourse1);
 			onMainCourse2.setOption(option2);
 			onMainCourseRepository.save(onMainCourse2);
 
 
 			OnMainCourse onMainCourse3 = new OnMainCourse();
-			onMainCourse3.setName("3");
+			onMainCourse3.setNameM("3");
 			onMainCourse3.setMaincourse(mainCourse2);
 			onMainCourse3.setOption(option3);
 			onMainCourseRepository.save(onMainCourse3);
 
 			OnMainCourse onMainCourse4 = new OnMainCourse();
-			onMainCourse4.setName("4");
+			onMainCourse4.setNameM("4");
 			onMainCourse4.setMaincourse(mainCourse2);
 			onMainCourse4.setOption(option4);
 			onMainCourseRepository.save(onMainCourse4);
 //==================================================================
 //		OnMainType
 			OnMainType onMainType1 = new OnMainType();
-			onMainType1.setName("1");
+			onMainType1.setNameMT("1");
 			onMainType1.setMaincourse(mainCourse1);
 			onMainType1.setTypefood(typeFood1);
 			onMainTypeRepository.save(onMainType1);
 
 			OnMainType onMainType2 = new OnMainType();
-			onMainType2.setName("2");
+			onMainType2.setNameMT("2");
 			onMainType2.setMaincourse(mainCourse2);
 			onMainType2.setTypefood(typeFood2);
 			onMainTypeRepository.save(onMainType2);
