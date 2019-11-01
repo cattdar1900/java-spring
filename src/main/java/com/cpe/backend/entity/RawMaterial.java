@@ -29,23 +29,21 @@ public class RawMaterial {  //สิทธิการรักษา
   @SequenceGenerator(name="RawMaterial_seq",sequenceName="RawMaterial_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="RawMaterial_seq") 
   @Column(name = "RawMaterial_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
 
 
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnMenu> onMenu;
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnMatRes> onMatRes;
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnMatType> onMatTypes;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnMenu> onMenu;
+//
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnMatRes> onMatRes;
+//
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnMatType> onMatTypes;
 
   
 

@@ -29,8 +29,7 @@ public class MainCourse {  //สิทธิการรักษา
   @SequenceGenerator(name="MainCourse_seq",sequenceName="MainCourset_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="MainCourse_seq") 
   @Column(name = "MainCourse_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
 
 
@@ -39,22 +38,22 @@ public class MainCourse {  //สิทธิการรักษา
   //1-all ->Option
 
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<Menu> menu;
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnResMain> onResMains;
-
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnMainCourse> onmaincourse;
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnMainType> onmaintype;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<Menu> menu;
+//
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnResMain> onResMains;
+//
+//
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnMainCourse> onmaincourse;
+//
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnMainType> onmaintype;
   
 
 

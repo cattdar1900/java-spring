@@ -27,17 +27,14 @@ public class Service {  //สิทธิการรักษา
   @SequenceGenerator(name="Service_seq",sequenceName="Service_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Service_seq") 
   @Column(name = "Service_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
-  private  String name ;  
-  @Getter @Setter
+  private @NonNull Long id;
+  private  String name ;
   private String username ;
-  @Getter @Setter 
   private String password ;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<Order> order;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<Order> order;
 
 
   //relation with order , can edit order , view order , CRUD order

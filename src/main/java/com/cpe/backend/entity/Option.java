@@ -29,32 +29,29 @@ public class Option {  //สิทธิการรักษา
   @SequenceGenerator(name="Option_seq",sequenceName="Option_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Option_seq") 
   @Column(name = "Option_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
-  private  String name ;  
-  @Getter @Setter
+  private @NonNull Long id;
+  private  String name ;
   private int price ;
   
-  @ManyToOne(fetch = FetchType.EAGER, targetEntity = MainCourse.class)
-  @JoinColumn(name = "MAINCOURSE_ID", insertable = true)
-  private MainCourse maincourse;
+//  @ManyToOne(fetch = FetchType.EAGER, targetEntity = MainCourse.class)
+//  @JoinColumn(name = "MAINCOURSE_ID", insertable = true)
+//  private MainCourse maincourse;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeFood.class)
   @JoinColumn(name = "TYPEFOOD_ID", insertable = true)
   private TypeFood typefood;
 
-
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnOption> onoption;
-
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
   @JoinColumn(name = "RESTAURANT_ID", insertable = true)
   private Restaurant restaurant;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnMainCourse> onMainCourse;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnOption> onoption;
+
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnMainCourse> onMainCourse;
 
  
   

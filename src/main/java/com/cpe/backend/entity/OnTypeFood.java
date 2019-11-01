@@ -26,8 +26,7 @@ public class OnTypeFood {  //สิทธิการรักษา
   @SequenceGenerator(name="OnTypeFood_seq",sequenceName="OnTypeFood_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnTypeFood_seq") 
   @Column(name = "OnTypeFood_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeFood.class)
