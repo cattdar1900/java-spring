@@ -1,6 +1,6 @@
 package com.cpe.backend.repository;
 
-
+import java.util.Optional;
 
 import com.cpe.backend.entity.Service;
 
@@ -10,5 +10,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface ServiceRepository extends JpaRepository<Service, Long> {
 
-    Service findById(long id);
+    Optional<Service> findById(String id);
 }

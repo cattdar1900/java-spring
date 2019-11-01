@@ -24,10 +24,9 @@ import javax.persistence.Entity;
 public class Service {  //สิทธิการรักษา
       
   @Id 
-  @SequenceGenerator(name="Service_seq",sequenceName="Service_seq")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Service_seq") 
+  
   @Column(name = "Service_ID", unique = true, nullable = true)
-  private @NonNull Long id;
+  private @NonNull String id;
   private  String name ;
   private String username ;
   private String password ;
