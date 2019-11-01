@@ -476,13 +476,13 @@ public class BackendApplication {
 			OnTypeFood onTypeFood1 = new OnTypeFood();
 			onTypeFood1.setName("1");
 			onTypeFood1.setRestaurant(res1);
-			onTypeFood1.setTypefood(typeFood1);
+			onTypeFood1.setTypemenu(typeMenu1);
 			onTypeFoodRepository.save(onTypeFood1);
 
 			OnTypeFood onTypeFood2 = new OnTypeFood();
 			onTypeFood2.setName("1");
 			onTypeFood2.setRestaurant(res2);
-			onTypeFood2.setTypefood(typeFood2);
+			onTypeFood2.setTypemenu(typeMenu2);
 			onTypeFoodRepository.save(onTypeFood2);
 
 		};

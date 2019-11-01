@@ -29,9 +29,9 @@ public class OnTypeFood {  //สิทธิการรักษา
   private @NonNull Long id;
   private  String name ;  
  
-  @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeFood.class)
-  @JoinColumn(name = "TYPEFOOD_ID", insertable = true)
-  private TypeFood typefood;
+  @ManyToOne(fetch = FetchType.EAGER, targetEntity = TypeMenu.class)
+  @JoinColumn(name = "TYPEMENU_ID", insertable = true)
+  private TypeMenu typemenu;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)
   @JoinColumn(name = "RESTAURANT_ID", insertable = true)
