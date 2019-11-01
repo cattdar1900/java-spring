@@ -45,10 +45,12 @@ public class BackendApplication {
 		return args -> {
 //		Service
 			Service service1 = new Service();
+			service1.setId("65465465");
 			service1.setName("นางสาวใจดี ใจกว้าง");
 			serviceRepository.save(service1);
 
 			Service service2 = new Service();
+			service2.setId("545454");
 			service2.setName("นายขวัญเอย ขวัญมา");
 			serviceRepository.save(service2);
 
