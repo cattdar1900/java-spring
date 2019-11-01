@@ -34,8 +34,13 @@ public class BackendApplication {
 			MenuRepository	menuRepository,
 			OrderRepository orderRepository,
 			OnOptionRepository	onOptionRepository,
-			OnMainCourseRepository onMainCourseRepository
-
+			OnMainCourseRepository onMainCourseRepository,
+			OnMainTypeRepository onMainTypeRepository,
+			OnMatTypeRepository onMatTypeRepository,
+			OnMatResRepository onMatResRepository,
+			OnMenuRepository onMenuRepository,
+			OnResMainRepository onResMainRepository,
+			OnTypeFoodRepository onTypeFoodRepository
 	) {
 		return args -> {
 //		Service
@@ -105,11 +110,22 @@ public class BackendApplication {
 			typeMenuRepository.save(typeMenu4);
 
 //		RawMaterial
-			Stream.of("หมู", "ไก่", "หมึก", "ปลา").forEach(name -> {
-				RawMaterial rawMaterial = new RawMaterial();
-				rawMaterial.setName(name);
-				rawMaterialRepository.save(rawMaterial);
-			});
+			RawMaterial rawMaterial1 = new RawMaterial();
+			rawMaterial1.setName("หมู");
+			rawMaterialRepository.save(rawMaterial1);
+
+			RawMaterial rawMaterial2 = new RawMaterial();
+			rawMaterial2.setName("ไก่");
+			rawMaterialRepository.save(rawMaterial2);
+
+			RawMaterial rawMaterial3 = new RawMaterial();
+			rawMaterial3.setName("หมึก");
+			rawMaterialRepository.save(rawMaterial3);
+
+			RawMaterial rawMaterial4 = new RawMaterial();
+			rawMaterial4.setName("ปลา");
+			rawMaterialRepository.save(rawMaterial4);
+
 //		Option
 			Option option1 = new Option();
 			option1.setName("ไข่ดาว");
@@ -127,10 +143,17 @@ public class BackendApplication {
 
 			Option option3 = new Option();
 			option3.setName("ไข่มุก");
-			option3.setPrice(0);
+			option3.setPrice(5);
 			option3.setRestaurant(res2);
 			option3.setTypefood(typeFood2);
 			optionRepository.save(option3);
+
+			Option option4 = new Option();
+			option4.setName("ปีโป้");
+			option4.setPrice(5);
+			option4.setRestaurant(res2);
+			option4.setTypefood(typeFood2);
+			optionRepository.save(option4);
 
 
 //			Menu
@@ -283,7 +306,6 @@ public class BackendApplication {
 			onOption4.setTotalPriceMenu(40);
 			onOption4.setTotalPriceOp(5);
 			onOptionRepository.save(onOption4);
-
 			//order5
 			OnOption onOption5 = new OnOption();
 			onOption5.setOrder(order5);
@@ -308,38 +330,161 @@ public class BackendApplication {
 			onOptionRepository.save(onOption6);
 
 //		OnMainCourse
-//			OnMainCourse onMainCourse1 = new OnMainCourse();
-//			onMainCourse1.setName("1");
-//			onMainCourse1.setMaincourse(null);
-//			onMainCourse1.setOption(null);
-//			onMainCourseRepository.save(onMainCourse1);
-//
-//			OnMainCourse onMainCourse2 = new OnMainCourse();
-//			onMainCourse2.setName("2");
-//			onMainCourse2.setMaincourse(null);
-//			onMainCourse2.setOption(null);
-//			onMainCourseRepository.save(onMainCourse2);
-//
-//
-//			OnMainCourse onMainCourse3 = new OnMainCourse();
-//			onMainCourse3.setName("3");
-//			onMainCourse3.setMaincourse(null);
-//			onMainCourse3.setOption(null);
-//			onMainCourseRepository.save(onMainCourse3);
-//
-//			OnMainCourse onMainCourse4 = new OnMainCourse();
-//			onMainCourse4.setName("4");
-//			onMainCourse4.setMaincourse(null);
-//			onMainCourse4.setOption(null);
-//			onMainCourseRepository.save(onMainCourse4);
-//
-//
-//			OnMainCourse onMainCourse5 = new OnMainCourse();
-//			onMainCourse5.setName("5");
-//			onMainCourse5.setMaincourse(null);
-//			onMainCourse5.setOption(null);
-//			onMainCourseRepository.save(onMainCourse5);
-//
+			OnMainCourse onMainCourse1 = new OnMainCourse();
+			onMainCourse1.setName("1");
+			onMainCourse1.setMaincourse(mainCourse1);
+			onMainCourse1.setOption(option1);
+			onMainCourseRepository.save(onMainCourse1);
+
+			OnMainCourse onMainCourse2 = new OnMainCourse();
+			onMainCourse2.setName("2");
+			onMainCourse2.setMaincourse(mainCourse1);
+			onMainCourse2.setOption(option2);
+			onMainCourseRepository.save(onMainCourse2);
+
+
+			OnMainCourse onMainCourse3 = new OnMainCourse();
+			onMainCourse3.setName("3");
+			onMainCourse3.setMaincourse(mainCourse2);
+			onMainCourse3.setOption(option3);
+			onMainCourseRepository.save(onMainCourse3);
+
+			OnMainCourse onMainCourse4 = new OnMainCourse();
+			onMainCourse4.setName("4");
+			onMainCourse4.setMaincourse(mainCourse2);
+			onMainCourse4.setOption(option4);
+			onMainCourseRepository.save(onMainCourse4);
+//==================================================================
+//		OnMainType
+			OnMainType onMainType1 = new OnMainType();
+			onMainType1.setName("1");
+			onMainType1.setMaincourse(mainCourse1);
+			onMainType1.setTypefood(typeFood1);
+			onMainTypeRepository.save(onMainType1);
+
+			OnMainType onMainType2 = new OnMainType();
+			onMainType2.setName("2");
+			onMainType2.setMaincourse(mainCourse2);
+			onMainType2.setTypefood(typeFood2);
+			onMainTypeRepository.save(onMainType2);
+
+//		OnMatType
+			OnMatType onMatType1 = new OnMatType();
+			onMatType1.setRawMaterial(rawMaterial1);
+			onMatType1.setTypeFood(typeFood1);
+			onMatTypeRepository.save(onMatType1);
+
+			OnMatType onMatType2 = new OnMatType();
+			onMatType2.setRawMaterial(rawMaterial2);
+			onMatType2.setTypeFood(typeFood1);
+			onMatTypeRepository.save(onMatType2);
+
+			OnMatType onMatType3 = new OnMatType();
+			onMatType3.setRawMaterial(rawMaterial3);
+			onMatType3.setTypeFood(typeFood1);
+			onMatTypeRepository.save(onMatType3);
+
+			OnMatType onMatType4 = new OnMatType();
+			onMatType4.setRawMaterial(rawMaterial4);
+			onMatType4.setTypeFood(typeFood1);
+			onMatTypeRepository.save(onMatType4);
+
+//		OnMatRes
+			OnMatRes onMatRes1 = new OnMatRes();
+			onMatRes1.setRawMaterial(rawMaterial1);
+			onMatRes1.setRestaurant(res1);
+			onMatResRepository.save(onMatRes1);
+
+			OnMatRes onMatRes2 = new OnMatRes();
+			onMatRes2.setRawMaterial(rawMaterial2);
+			onMatRes2.setRestaurant(res1);
+			onMatResRepository.save(onMatRes2);
+
+			OnMatRes onMatRes3 = new OnMatRes();
+			onMatRes3.setRawMaterial(rawMaterial3);
+			onMatRes3.setRestaurant(res1);
+			onMatResRepository.save(onMatRes3);
+
+			OnMatRes onMatRes4 = new OnMatRes();
+			onMatRes4.setRawMaterial(rawMaterial4);
+			onMatRes4.setRestaurant(res1);
+			onMatResRepository.save(onMatRes4);
+
+//		OnMenu
+			OnMenu onMenu1 = new OnMenu();
+			onMenu1.setName("1");
+			onMenu1.setMenu(menu1);
+			onMenu1.setRawmaterial(rawMaterial1);
+			onMenuRepository.save(onMenu1);
+
+			OnMenu onMenu2 = new OnMenu();
+			onMenu2.setName("2");
+			onMenu2.setMenu(menu1);
+			onMenu2.setRawmaterial(rawMaterial2);
+			onMenuRepository.save(onMenu2);
+
+			OnMenu onMenu3 = new OnMenu();
+			onMenu3.setName("3");
+			onMenu3.setMenu(menu1);
+			onMenu3.setRawmaterial(rawMaterial3);
+			onMenuRepository.save(onMenu3);
+
+			OnMenu onMenu4 = new OnMenu();
+			onMenu4.setName("4");
+			onMenu4.setMenu(menu1);
+			onMenu4.setRawmaterial(rawMaterial4);
+			onMenuRepository.save(onMenu4);
+
+			OnMenu onMenu5 = new OnMenu();
+			onMenu5.setName("5");
+			onMenu5.setMenu(menu2);
+			onMenu5.setRawmaterial(rawMaterial1);
+			onMenuRepository.save(onMenu5);
+
+			OnMenu onMenu6 = new OnMenu();
+			onMenu6.setName("6");
+			onMenu6.setMenu(menu2);
+			onMenu6.setRawmaterial(rawMaterial2);
+			onMenuRepository.save(onMenu6);
+
+			OnMenu onMenu7 = new OnMenu();
+			onMenu7.setName("7");
+			onMenu7.setMenu(menu2);
+			onMenu7.setRawmaterial(rawMaterial3);
+			onMenuRepository.save(onMenu7);
+
+			OnMenu onMenu8 = new OnMenu();
+			onMenu8.setName("8");
+			onMenu8.setMenu(menu2);
+			onMenu8.setRawmaterial(rawMaterial4);
+			onMenuRepository.save(onMenu8);
+
+//		OnResMain
+			OnResMain onResMain1 = new OnResMain();
+			onResMain1.setName("1");
+			onResMain1.setMainCourse(mainCourse1);
+			onResMain1.setRestaurant(res1);
+			onResMainRepository.save(onResMain1);
+
+			OnResMain onResMain2 = new OnResMain();
+			onResMain2.setName("2");
+			onResMain2.setMainCourse(mainCourse2);
+			onResMain2.setRestaurant(res2);
+			onResMainRepository.save(onResMain2);
+
+//		OnTypeFood
+			OnTypeFood onTypeFood1 = new OnTypeFood();
+			onTypeFood1.setName("1");
+			onTypeFood1.setRestaurant(res1);
+			onTypeFood1.setTypefood(typeFood1);
+			onTypeFoodRepository.save(onTypeFood1);
+
+			OnTypeFood onTypeFood2 = new OnTypeFood();
+			onTypeFood2.setName("1");
+			onTypeFood2.setRestaurant(res2);
+			onTypeFood2.setTypefood(typeFood2);
+			onTypeFoodRepository.save(onTypeFood2);
+
 		};
 	}
 
