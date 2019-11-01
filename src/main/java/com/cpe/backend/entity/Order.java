@@ -54,7 +54,7 @@ public class Order {  //สิทธิการรักษา
 
 //  @OneToMany(fetch = FetchType.EAGER)
 //  //mappedBy  = "type"
-//  private Collection<OnOption> onOptions;
+//  private Collection<OnOption> onOptions; git555
 
 
   
