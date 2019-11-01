@@ -55,10 +55,14 @@ public class BackendApplication {
 //		Rider
 			Rider rider1 = new Rider();
 			rider1.setName("นายโจ๊ก ปลาแดก");
+			rider1.setId("joke");
+			rider1.setPassword("1234");
 			riderRepository.save(rider1);
 
 			Rider rider2 = new Rider();
 			rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
+			rider2.setId("game");
+			rider2.setPassword("1234");
 			riderRepository.save(rider2);
 
 //		TypeFood
