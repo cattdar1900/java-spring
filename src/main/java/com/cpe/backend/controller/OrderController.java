@@ -39,5 +39,11 @@ public class OrderController {
     }
 
 
+    @GetMapping("/OrderByRiderId/{id}")
+    public Collection<Order> Orders(@PathVariable String id) {
+        Collection<Order> Order = OrderRepository.findByRiderId(id);
+        return Order;
+    }
+
 
 }

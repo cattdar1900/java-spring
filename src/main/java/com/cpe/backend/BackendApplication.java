@@ -59,12 +59,14 @@ public class BackendApplication {
 			rider1.setName("นายโจ๊ก ปลาแดก");
 			rider1.setId("joke");
 			rider1.setPassword("1234");
+			rider1.setIncome(1500);
 			riderRepository.save(rider1);
 
 			Rider rider2 = new Rider();
 			rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
 			rider2.setId("game");
 			rider2.setPassword("1234");
+			rider2.setIncome(1800);
 			riderRepository.save(rider2);
 
 //		TypeFood
@@ -228,6 +230,7 @@ public class BackendApplication {
 			Order order3 = new Order();
 			order3.setCusName("ลูกค้า3-extra");
 			order3.setStatus("กำลังดำเนินการ");
+			order3.setCusLocation("หอสุรนิเวศ5");
 			order3.setService(service1);
 			order3.setTransDistance(1.0);
 			order3.setTotalPriceDistance(5);
@@ -248,6 +251,7 @@ public class BackendApplication {
 			Order order5 = new Order();
 			order5.setCusName("ลูกค้า5-extra");
 			order5.setStatus("ดำเนินการเสร็จสิ้น");
+			order5.setCusLocation("หอสุรนิเวศ13");
 			order5.setService(service1);
 			order5.setTransDistance(1.0);
 			order5.setTotalPriceDistance(5);
