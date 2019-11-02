@@ -4,6 +4,9 @@ package com.cpe.backend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import antlr.collections.List;
+
 import org.springframework.web.bind.annotation.PathVariable;
 
 
@@ -40,7 +43,7 @@ public class TypeMenuController {
     }
 
     @GetMapping("/TypeMenuByMainCourse/{id}")
-    public Collection<Object[]> typeMenuModel(@PathVariable Long id){
+    public Collection<Object> typeMenuModel(@PathVariable Long id){
         return TypeMenuRepository.findMenuByResIDs(id);
     }
 

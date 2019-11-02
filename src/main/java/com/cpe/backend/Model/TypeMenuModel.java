@@ -6,15 +6,13 @@ import lombok.*;
 
 @Data
 public  class TypeMenuModel {
-    private long Type_Menu_ID;
-    private String Name;
-    private long Typefood_id;
-    private long on_main_type_id;
-    private String names;
-    private long typefood_id2;
-    private long typefood_id3;
-    private String namess; 
-
-    
-   
+    private long TYPE_MENU_ID;
+    private String NAMET;
+    private long TYPEFOOD_ID_TM;
+    private long ON_MAIN_TYPE_ID;
+    private String NAMEMT;
+    private long MAINCOURSE_ID;
+    private long TYPEFOOD_ID ;
+    private long TYPE_FOODS_ID_TF;
+    private String NAMETF  ;    
 }
