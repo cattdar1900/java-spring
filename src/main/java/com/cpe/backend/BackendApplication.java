@@ -210,20 +210,25 @@ public class BackendApplication {
 			Order order1 = new Order();
 			order1.setCusName("ลูกค้า1-extra");
 			order1.setStatus("รอดำเนินการ");
+			order1.setCusLocation("หอสุรนิเวศ 8");
 			order1.setService(service1);
 			order1.setTransDistance(1.0);
 			order1.setTotalPriceDistance(5);
 			order1.setTotalPriceTrans(30);
 			order1.setTotalPriceFood(80);
 			order1.setNetPrice(115);
-			order1.setDate(null);
+			Date date0=new SimpleDateFormat("dd/MM/yyyy").parse("13/7/2019");
+			order1.setDate(date0);
 			order1.setRider(null);
 			orderRepository.save(order1);
 
 			Order order2 = new Order();
 			order2.setCusName("ลูกค้า2");
 			order2.setStatus("รอดำเนินการ");
+			order1.setCusLocation("หอสุรนิเวศ 6");
 			order2.setService(service2);
+			Date date00=new SimpleDateFormat("dd/MM/yyyy").parse("20/4/2019");
+			order1.setDate(date00);
 			order2.setRider(null);
 			orderRepository.save(order2);
 			//extra
@@ -237,7 +242,12 @@ public class BackendApplication {
 			order3.setTotalPriceTrans(30);
 			order3.setTotalPriceFood(80);
 			order3.setNetPrice(115);
-			order3.setDate(null);
+			String sDate1 = "13/7/2019";
+			String sDate2 = "13/7/2019";
+			Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
+			Date date2=new SimpleDateFormat("dd/MM/yyyy").parse(sDate2);
+			order1.setDate(date1);
+			order1.setDateRiderSuccess(date2);
 			order3.setRider(rider1);
 			orderRepository.save(order3);
 
@@ -258,9 +268,12 @@ public class BackendApplication {
 			order5.setTotalPriceTrans(30);
 			order5.setTotalPriceFood(80);
 			order5.setNetPrice(115);
-			String sDate1 = "10/5/2019";
-			Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-			order5.setDate(date1);
+			String sDate3 = "10/5/2019";
+			String sDate4 = "10/5/2019";
+			Date date5=new SimpleDateFormat("dd/MM/yyyy").parse(sDate3);
+			Date date6=new SimpleDateFormat("dd/MM/yyyy").parse(sDate4);
+			order5.setDate(date5);
+			order5.setDateRiderSuccess(date6);
 			order5.setRider(rider1);
 			orderRepository.save(order5);
 

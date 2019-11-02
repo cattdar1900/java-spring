@@ -41,6 +41,7 @@ public class Order {  //สิทธิการรักษา
   private int netPrice;
   private @NonNull String status;
   private Date date;
+  private Date dateRiderSuccess;
 
   //OnMenu 1 2 3
 

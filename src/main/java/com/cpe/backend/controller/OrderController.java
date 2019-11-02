@@ -38,10 +38,17 @@ public class OrderController {
         return Order;
     }
 
+    
+    @GetMapping("/OrderByStatus")
+    public Collection<Object[]> Orders2() {
+        return OrderRepository.findByRiderStatus();
+    }
+
 
     @GetMapping("/OrderByRiderId/{id}")
-    public Collection<Order> Orders(@PathVariable String id) {
-        Collection<Order> Order = OrderRepository.findByRiderId(id);
+    public Collection<Object[]> Orders(@PathVariable String id) {
+        Collection<Object[]> Order = OrderRepository.findByRiderId(id);
+
         return Order;
     }
 
