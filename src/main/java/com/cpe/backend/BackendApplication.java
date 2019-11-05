@@ -87,6 +87,10 @@ public class BackendApplication {
 			res2.setName("ชาขุนพล");
 			restaurantRepository.save(res2);
 
+			Restaurant res3 = new Restaurant();
+			res3.setName("แซ่บมั้ย");
+			restaurantRepository.save(res3);
+
 //		MainCourse
 			MainCourse mainCourse1 = new MainCourse();
 			mainCourse1.setName("ข้าว");
@@ -145,7 +149,7 @@ public class BackendApplication {
 			Option option2 = new Option();
 			option2.setName("ไข่เจียว");
 			option2.setPrice(10);
-			option2.setRestaurant(res1);
+			option2.setRestaurant(res3);
 			option2.setTypefood(typeFood1);
 			optionRepository.save(option2);
 
@@ -280,9 +284,42 @@ public class BackendApplication {
 			Order order6 = new Order();
 			order6.setCusName("ลูกค้า6");
 			order6.setStatus("ดำเนินการเสร็จสิ้น");
+			order6.setCusLocation("หอสุรนิเวศ15");
+			order6.setService(service1);
+			order6.setTransDistance(1.0);
+			order6.setTotalPriceDistance(5);
+			order6.setTotalPriceTrans(30);
+			order6.setTotalPriceFood(80);
+			order6.setNetPrice(115);
+			String sDate6 = "11/09/2019";
+			String sDate7 = "11/09/2019";
+			Date date7=new SimpleDateFormat("dd/MM/yyyy").parse(sDate6);
+			Date date8=new SimpleDateFormat("dd/MM/yyyy").parse(sDate7);
+			order6.setDate(date7);
+			order6.setDateRiderSuccess(date8);
 			order6.setService(service2);
-			order6.setRider(rider2);
+			order6.setRider(rider1);
 			orderRepository.save(order6);
+
+			Order order7 = new Order();
+			order7.setCusName("ลูกค้า7");
+			order7.setStatus("ดำเนินการเสร็จสิ้น");
+			order7.setCusLocation("หอสุรนิเวศ18");
+			order7.setService(service1);
+			order7.setTransDistance(1.0);
+			order7.setTotalPriceDistance(5);
+			order7.setTotalPriceTrans(30);
+			order7.setTotalPriceFood(80);
+			order7.setNetPrice(115);
+			String sDate8 = "20/09/2019";
+			String sDate9 = "20/09/2019";
+			Date date9=new SimpleDateFormat("dd/MM/yyyy").parse(sDate8);
+			Date date10=new SimpleDateFormat("dd/MM/yyyy").parse(sDate9);
+			order7.setDate(date9);
+			order7.setDateRiderSuccess(date10);
+			order7.setService(service2);
+			order7.setRider(rider1);
+			orderRepository.save(order7);
 
 //		onOption
 			//order1
@@ -351,6 +388,53 @@ public class BackendApplication {
 			onOption6.setTotalPriceMenu(40);
 			onOption6.setTotalPriceOp(5);
 			onOptionRepository.save(onOption6);
+
+			OnOption onOption10 = new OnOption();
+			onOption10.setOrder(order6);
+			onOption10.setMenu(menu2);
+			onOption10.setOption(option2);
+			onOption10.setAmountMenu(1);
+			onOption10.setAmountOption(1);
+			onOption10.setTotalPrice(35);
+			onOption10.setTotalPriceMenu(30);
+			onOption10.setTotalPriceOp(5);
+			onOptionRepository.save(onOption10);
+
+			OnOption onOption7 = new OnOption();
+			onOption7.setOrder(order7);
+			onOption7.setMenu(menu3);
+			onOption7.setOption(option3);
+			onOption7.setAmountMenu(1);
+			onOption7.setAmountOption(1);
+			onOption7.setTotalPrice(45);
+			onOption7.setTotalPriceMenu(40);
+			onOption7.setTotalPriceOp(5);
+			onOptionRepository.save(onOption7);
+
+			OnOption onOption8 = new OnOption();
+			onOption8.setOrder(order7);
+			onOption8.setMenu(menu1);
+			onOption8.setOption(option1);
+			onOption8.setAmountMenu(1);
+			onOption8.setAmountOption(1);
+			onOption8.setTotalPrice(35);
+			onOption8.setTotalPriceMenu(30);
+			onOption8.setTotalPriceOp(5);
+			onOptionRepository.save(onOption8);
+
+			
+			OnOption onOption9 = new OnOption();
+			onOption9.setOrder(order7);
+			onOption9.setMenu(menu2);
+			onOption9.setOption(option2);
+			onOption9.setAmountMenu(1);
+			onOption9.setAmountOption(1);
+			onOption9.setTotalPrice(35);
+			onOption9.setTotalPriceMenu(30);
+			onOption9.setTotalPriceOp(5);
+			onOptionRepository.save(onOption9);
+
+		
 
 //		OnMainCourse
 			OnMainCourse onMainCourse1 = new OnMainCourse();
