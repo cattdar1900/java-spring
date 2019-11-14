@@ -44,30 +44,33 @@ public class BackendApplication {
 	) {
 		return args -> {
 //		Service
-			Service service1 = new Service();
-			service1.setId("65465465");
-			service1.setName("นางสาวใจดี ใจกว้าง");
-			serviceRepository.save(service1);
+Service service1 = new Service();
+service1.setName("นางสาวใจดี ใจกว้าง");
+service1.setId("beam");
+service1.setPassword("1234");
+serviceRepository.save(service1);
 
-			Service service2 = new Service();
-			service2.setId("545454");
-			service2.setName("นายขวัญเอย ขวัญมา");
-			serviceRepository.save(service2);
+Service service2 = new Service();
+service2.setName("นายขวัญเอย ขวัญมา");
+service2.setId("beam2");
+service2.setPassword("1234");
+serviceRepository.save(service2);
 
 //		Rider
-			Rider rider1 = new Rider();
-			rider1.setName("นายโจ๊ก ปลาแดก");
-			rider1.setId("joke");
-			rider1.setPassword("1234");
-			rider1.setIncome(1500);
-			riderRepository.save(rider1);
+Rider rider1 = new Rider();
+rider1.setName("นายโจ๊ก ปลาแดก");
+rider1.setId("joke");
+rider1.setPassword("1234");
+rider1.setIncome(15000);
+riderRepository.save(rider1);
 
-			Rider rider2 = new Rider();
-			rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
-			rider2.setId("game");
-			rider2.setPassword("1234");
-			rider2.setIncome(1800);
-			riderRepository.save(rider2);
+Rider rider2 = new Rider();
+rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
+rider2.setId("joker");
+rider2.setPassword("1234");
+rider2.setIncome(23000);
+riderRepository.save(rider2);
+
 
 //		TypeFood
 			TypeFood typeFood1 = new TypeFood();
@@ -330,6 +333,26 @@ public class BackendApplication {
 			order7.setRider(rider1);
 			orderRepository.save(order7);
 
+			Order order8 = new Order();
+			order8.setCusName("ลูกค้า7");
+			order8.setStatus("ดำเนินการเสร็จสิ้น");
+			order8.setCusLocation("หอสุรนิเวศ18");
+			order8.setService(service1);
+			order8.setTransDistance(1.0);
+			order8.setTotalPriceDistance(5);
+			order8.setTotalPriceTrans(30);
+			order8.setTotalPriceFood(80);
+			order8.setNetPrice(115);
+			String sDate10 = "20/09/2019";
+			String sDate11 = "20/09/2019";
+			Date date11=new SimpleDateFormat("dd/MM/yyyy").parse(sDate10);
+			Date date12=new SimpleDateFormat("dd/MM/yyyy").parse(sDate11);
+			order8.setDate(date11);
+			order8.setDateRiderSuccess(date12);
+			order8.setService(service2);
+			order8.setRider(rider2);
+			orderRepository.save(order8);
+
 //		onOption
 			//order1
 			OnOption onOption1 = new OnOption();
@@ -475,6 +498,18 @@ public class BackendApplication {
 			onOption13.setTotalPriceMenu(30);
 			onOption13.setTotalPriceOp(5);
 			onOptionRepository.save(onOption13);
+
+			OnOption onOption14 = new OnOption();
+			onOption14.setOrder(order8);
+			onOption14.setMenu(menu2);
+			onOption14.setOption(option2);
+			onOption14.setAmountMenu(1);
+			onOption14.setAmountOption(1);
+			onOption14.setTotalPrice(35);
+			onOption14.setTotalPriceMenu(30);
+			onOption14.setTotalPriceOp(5);
+			onOptionRepository.save(onOption14);
+
 
 		
 

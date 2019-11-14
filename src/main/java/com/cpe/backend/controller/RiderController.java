@@ -35,10 +35,11 @@ public class RiderController {
     }
 
     @GetMapping("/Rider/{id}")
-    public Optional<Rider> Riders(@PathVariable Long id) {
+    public Optional<Rider> Riders(@PathVariable String  id) {
         Optional<Rider> Rider = RiderRepository.findById(id);
         return Rider;
     }
+    
     @RequestMapping(value = "/Rider/login",method = RequestMethod.POST)
     public String Login(@RequestBody Map<String, String> body){
         Rider UserU = RiderRepository.findById(body.get("username")).get();
