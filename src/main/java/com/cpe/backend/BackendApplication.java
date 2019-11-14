@@ -229,10 +229,19 @@ public class BackendApplication {
 			Order order2 = new Order();
 			order2.setCusName("ลูกค้า2");
 			order2.setStatus("รอดำเนินการ");
-			order1.setCusLocation("หอสุรนิเวศ 6");
+			order2.setCusLocation("หอสุรนิเวศ 6");
 			order2.setService(service2);
-			Date date00=new SimpleDateFormat("dd/MM/yyyy").parse("20/4/2019");
-			order1.setDate(date00);
+			order2.setTransDistance(1.0);
+			order2.setTotalPriceDistance(7);
+			order2.setTotalPriceTrans(30);
+			order2.setTotalPriceFood(50);
+			order2.setNetPrice(115);
+			String sDate001 = "21/05/2019";
+			String sDate002 = "21/05/2019";
+			Date date001=new SimpleDateFormat("dd/MM/yyyy").parse(sDate001);
+			Date date002=new SimpleDateFormat("dd/MM/yyyy").parse(sDate002);
+			order2.setDate(date001);
+			order2.setDateRiderSuccess(date002);
 			order2.setRider(null);
 			orderRepository.save(order2);
 			//extra
@@ -433,6 +442,39 @@ public class BackendApplication {
 			onOption9.setTotalPriceMenu(30);
 			onOption9.setTotalPriceOp(5);
 			onOptionRepository.save(onOption9);
+
+			OnOption onOption11 = new OnOption();
+			onOption11.setOrder(order2);
+			onOption11.setMenu(menu3);
+			onOption11.setOption(option3);
+			onOption11.setAmountMenu(1);
+			onOption11.setAmountOption(1);
+			onOption11.setTotalPrice(45);
+			onOption11.setTotalPriceMenu(40);
+			onOption11.setTotalPriceOp(5);
+			onOptionRepository.save(onOption11);
+
+			OnOption onOption12 = new OnOption();
+			onOption12.setOrder(order2);
+			onOption12.setMenu(menu1);
+			onOption12.setOption(option1);
+			onOption12.setAmountMenu(1);
+			onOption12.setAmountOption(1);
+			onOption12.setTotalPrice(35);
+			onOption12.setTotalPriceMenu(30);
+			onOption12.setTotalPriceOp(5);
+			onOptionRepository.save(onOption12);
+
+			OnOption onOption13 = new OnOption();
+			onOption13.setOrder(order2);
+			onOption13.setMenu(menu2);
+			onOption13.setOption(option2);
+			onOption13.setAmountMenu(1);
+			onOption13.setAmountOption(1);
+			onOption13.setTotalPrice(35);
+			onOption13.setTotalPriceMenu(30);
+			onOption13.setTotalPriceOp(5);
+			onOptionRepository.save(onOption13);
 
 		
 
