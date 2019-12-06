@@ -28,8 +28,7 @@ public class OnMenu {  //สิทธิการรักษา
   @SequenceGenerator(name="OnMenu_seq",sequenceName="OnMenu_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnMenu_seq") 
   @Column(name = "OnMenu_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
   
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Menu.class)

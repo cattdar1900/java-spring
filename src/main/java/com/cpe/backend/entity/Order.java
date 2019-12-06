@@ -15,6 +15,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.Timer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,14 +31,17 @@ public class Order {  //สิทธิการรักษา
   @SequenceGenerator(name="Order_seq",sequenceName="Order_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Order_seq") 
   @Column(name = "Order_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
-  private  String cusName ;  
-  @Getter @Setter
+  private @NonNull Long id;
+  private  String cusName ;
   private String cusLocation ;
-  @Getter @Setter 
-  private String transDistance ;
-  
+  private double transDistance ;
+  private int totalPriceDistance;
+  private int totalPriceFood;
+  private int totalPriceTrans;
+  private int netPrice;
+  private @NonNull String status;
+  private Date date;
+
   //OnMenu 1 2 3
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Service.class)
@@ -47,9 +52,9 @@ public class Order {  //สิทธิการรักษา
   @JoinColumn(name = "RIDER_ID", insertable = true)
   private Rider rider;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  //mappedBy  = "type"
-  private Collection<OnOption> onOptions;
+//  @OneToMany(fetch = FetchType.EAGER)
+//  //mappedBy  = "type"
+//  private Collection<OnOption> onOptions;
 
 
   

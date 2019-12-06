@@ -26,8 +26,7 @@ public class OnMatRes {  //สิทธิการรักษา
   @SequenceGenerator(name="OnMatRes_seq",sequenceName="OnMatRes_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnMatRes_seq") 
   @Column(name = "OnMatRes_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Restaurant.class)

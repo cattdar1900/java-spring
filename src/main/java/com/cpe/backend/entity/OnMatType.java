@@ -26,8 +26,7 @@ public class OnMatType {  //สิทธิการรักษา
   @SequenceGenerator(name="OnMatType_seq",sequenceName="OnMatType_seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OnMatType_seq") 
   @Column(name = "OnMatType_ID", unique = true, nullable = true)
-  private @NonNull Long id;  
-  @Getter @Setter
+  private @NonNull Long id;
   private  String name ;  
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = RawMaterial.class)
