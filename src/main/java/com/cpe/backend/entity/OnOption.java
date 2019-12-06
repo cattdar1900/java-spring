@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.util.Date;
 
 @Entity  
 @Data  
@@ -33,6 +34,7 @@ public class OnOption {  //สิทธิการรักษา
   private int amountMenu ;
   private int totalPriceMenu;
   private int totalPrice;
+  private Date receivedDate;
 
  
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Option.class)

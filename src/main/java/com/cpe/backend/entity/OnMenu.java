@@ -32,8 +32,8 @@ public class OnMenu {  //สิทธิการรักษา
   private  String name ;  
   
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = Menu.class)
-  @JoinColumn(name = "MENU_ID", insertable = true)
-  private Menu menu;
+  @JoinColumn(name = "typeMenu_MENU_ID", insertable = true)
+  private TypeMenu typeMenumenu;
 
   @ManyToOne(fetch = FetchType.EAGER, targetEntity = RawMaterial.class)
   @JoinColumn(name = "RAWMATERIAL_ID", insertable = true)

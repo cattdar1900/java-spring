@@ -35,7 +35,7 @@ public class RiderController {
     }
 
     @GetMapping("/Rider/{id}")
-    public Optional<Rider> Riders(@PathVariable Long id) {
+    public Optional<Rider> Riders(@PathVariable String id) {
         Optional<Rider> Rider = RiderRepository.findById(id);
         return Rider;
     }

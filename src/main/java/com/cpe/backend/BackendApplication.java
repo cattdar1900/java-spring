@@ -56,13 +56,15 @@ public class BackendApplication {
 
 //		Rider
 			Rider rider1 = new Rider();
-			rider1.setId("Adasd");
+			rider1.setId("AAA");
 			rider1.setName("นายโจ๊ก ปลาแดก");
+			rider1.setPassword("1234");
 			riderRepository.save(rider1);
 
 			Rider rider2 = new Rider();
-			rider2.setId("adasasd");
+			rider2.setId("BBB");
 			rider2.setName("นายฟลุ๊คฟลุ๊ค บาท");
+			rider2.setPassword("4321");
 			riderRepository.save(rider2);
 
 //		TypeFood
@@ -199,67 +201,80 @@ public class BackendApplication {
 			order1.setCusName("ลูกค้า1-extra");
 			order1.setStatus("รอดำเนินการ");
 			order1.setService(service1);
-			order1.setTransDistance(1.0);
-			order1.setTotalPriceDistance(5);
-			order1.setTotalPriceTrans(30);
+			order1.setTotalTransDistance(1.0);
+			order1.setDeliveredOptionPrice(5);
+			order1.setDeliveredPrice(30);
+			order1.setTotalDeliveredPrice(35);
 			order1.setTotalPriceFood(80);
 			order1.setNetPrice(115);
-			order1.setDate(null);
+			order1.setDeliveredDate(null);
+			order1.setReceivedDate(null);
 			order1.setRider(null);
 			orderRepository.save(order1);
 
 			Order order2 = new Order();
 			order2.setCusName("ลูกค้า2");
-			order2.setStatus("รอดำเนินการ");
+			order2.setStatus("xxx");
 			order2.setService(service2);
 			order2.setRider(null);
 			orderRepository.save(order2);
 			//extra
 			Order order3 = new Order();
 			order3.setCusName("ลูกค้า3-extra");
-			order3.setStatus("กำลังดำเนินการ");
+			order3.setStatus("รอดำเนินการ");
 			order3.setService(service1);
-			order3.setTransDistance(1.0);
-			order3.setTotalPriceDistance(5);
-			order3.setTotalPriceTrans(30);
+			order3.setTotalTransDistance(1.0);
+			order3.setDeliveredOptionPrice(5);
+			order3.setDeliveredPrice(30);
+			order3.setTotalDeliveredPrice(35);
 			order3.setTotalPriceFood(80);
 			order3.setNetPrice(115);
-			order3.setDate(null);
-			order3.setRider(rider1);
+			order3.setDeliveredDate(null);
+			order3.setReceivedDate(null);
+			order3.setRider(null);
 			orderRepository.save(order3);
 
 			Order order4 = new Order();
 			order4.setCusName("ลูกค้า4");
-			order4.setStatus("กำลังดำเนินการ");
+			order4.setStatus("xxx");
 			order4.setService(service2);
-			order4.setRider(rider2);
+			order4.setRider(null);
 			orderRepository.save(order4);
 			//extra
 			Order order5 = new Order();
 			order5.setCusName("ลูกค้า5-extra");
-			order5.setStatus("ดำเนินการเสร็จสิ้น");
+			order5.setStatus("รอดำเนินการ");
 			order5.setService(service1);
-			order5.setTransDistance(1.0);
-			order5.setTotalPriceDistance(5);
-			order5.setTotalPriceTrans(30);
+			order5.setTotalTransDistance(1.0);
+			order5.setDeliveredOptionPrice(5);
+			order5.setDeliveredPrice(30);
+			order5.setTotalDeliveredPrice(35);
 			order5.setTotalPriceFood(80);
 			order5.setNetPrice(115);
-			String sDate1 = "10/5/2019";
-			Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-			order5.setDate(date1);
-			order5.setRider(rider1);
+			order5.setDeliveredDate(null);
+			order5.setReceivedDate(null);
+			order5.setRider(null);
 			orderRepository.save(order5);
 
 			Order order6 = new Order();
 			order6.setCusName("ลูกค้า6");
-			order6.setStatus("ดำเนินการเสร็จสิ้น");
+			order6.setStatus("xxx");
 			order6.setService(service2);
-			order6.setRider(rider2);
+			order6.setRider(null);
 			orderRepository.save(order6);
 
 //		onOption
 			//order1
-
+			OnOption onOption1 = new OnOption();
+			onOption1.setOrder(order1);
+			onOption1.setMenu(menu2);
+			onOption1.setOption(option2);
+			onOption1.setAmountMenu(1);
+			onOption1.setAmountOption(1);
+			onOption1.setTotalPrice(45);
+			onOption1.setTotalPriceMenu(40);
+			onOption1.setTotalPriceOp(5);
+			onOptionRepository.save(onOption1);
 
 			OnOption onOption2 = new OnOption();
 			onOption2.setOrder(order1);
@@ -272,7 +287,16 @@ public class BackendApplication {
 			onOption2.setTotalPriceOp(5);
 			onOptionRepository.save(onOption2);
 			//order3
-
+			OnOption onOption3 = new OnOption();
+			onOption3.setOrder(order3);
+			onOption3.setMenu(menu2);
+			onOption3.setOption(option2);
+			onOption3.setAmountMenu(1);
+			onOption3.setAmountOption(1);
+			onOption3.setTotalPrice(45);
+			onOption3.setTotalPriceMenu(40);
+			onOption3.setTotalPriceOp(5);
+			onOptionRepository.save(onOption3);
 
 			OnOption onOption4 = new OnOption();
 			onOption4.setOrder(order3);
@@ -285,7 +309,16 @@ public class BackendApplication {
 			onOption4.setTotalPriceOp(5);
 			onOptionRepository.save(onOption4);
 			//order5
-
+//			OnOption onOption5 = new OnOption();
+//			onOption5.setOrder(order5);
+//			onOption5.setMenu(menu2);
+//			onOption5.setOption(option2);
+//			onOption5.setAmountMenu(1);
+//			onOption5.setAmountOption(1);
+//			onOption5.setTotalPrice(45);
+//			onOption5.setTotalPriceMenu(40);
+//			onOption5.setTotalPriceOp(5);
+//			onOptionRepository.save(onOption5);
 
 			OnOption onOption6 = new OnOption();
 			onOption6.setOrder(order5);
@@ -297,6 +330,17 @@ public class BackendApplication {
 			onOption6.setTotalPriceMenu(40);
 			onOption6.setTotalPriceOp(5);
 			onOptionRepository.save(onOption6);
+
+			OnOption onOption7 = new OnOption();
+			onOption7.setOrder(order5);
+			onOption7.setMenu(menu3);
+			onOption7.setOption(option3);
+			onOption7.setAmountMenu(1);
+			onOption7.setAmountOption(1);
+			onOption7.setTotalPrice(45);
+			onOption7.setTotalPriceMenu(40);
+			onOption7.setTotalPriceOp(5);
+			onOptionRepository.save(onOption7);
 
 //		OnMainCourse
 			OnMainCourse onMainCourse1 = new OnMainCourse();
@@ -380,30 +424,24 @@ public class BackendApplication {
 			onMatResRepository.save(onMatRes4);
 
 //		OnMenu
-
-
 			OnMenu onMenu5 = new OnMenu();
 			onMenu5.setName("5");
-			onMenu5.setMenu(menu2);
 			onMenu5.setRawmaterial(rawMaterial1);
 			onMenuRepository.save(onMenu5);
 
 			OnMenu onMenu6 = new OnMenu();
 			onMenu6.setName("6");
-			onMenu6.setMenu(menu2);
 			onMenu6.setRawmaterial(rawMaterial2);
 			onMenuRepository.save(onMenu6);
 
 			OnMenu onMenu7 = new OnMenu();
 			onMenu7.setName("7");
-			onMenu7.setMenu(menu2);
-			onMenu7.setRawmaterial(rawMaterial3);
+			onMenu7.setRawmaterial(null);
 			onMenuRepository.save(onMenu7);
 
 			OnMenu onMenu8 = new OnMenu();
 			onMenu8.setName("8");
-			onMenu8.setMenu(menu2);
-			onMenu8.setRawmaterial(rawMaterial4);
+			onMenu8.setRawmaterial(null);
 			onMenuRepository.save(onMenu8);
 
 //		OnResMain
