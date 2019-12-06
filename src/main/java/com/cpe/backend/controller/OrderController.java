@@ -42,24 +42,8 @@ public class OrderController {
         return Order;
     }
 
-//    @GetMapping("/FindOrdersByRiderId/{rid}/{id}")
-//    public Object FindOrdersByRiderId(@PathVariable String rid, @PathVariable Long id) {
-//        Optional<Order> order = OrderRepository.findById(id);
-//        Optional<Rider> rider = riderRepository.findById(rid);
-//        String O = order.get().getRider().getId();
-//        String R = rider.get().getId();
-//        if(O.equals(R)){
-//            return OrderRepository.findById(id);
-//        }else
-//            return "Error" ;
-//    }
-
     @GetMapping("/FindOrdersByRiderId/{rid}")
-    public Collection<Order> FindOrdersByRiderId(@PathVariable String rid) {
-//        Optional<Rider> rider = riderRepository.findById(rid);
-//        String R = rider.get().getId();
-        return OrderRepository.findOrdersByRiderId(rid);
-    }
+    public Collection<Order> FindOrdersByRiderId(@PathVariable String rid) { return OrderRepository.findOrdersByRiderId(rid); }
 
     @PutMapping("/Order/{id}/{status}")
     public ResponseEntity<Order> updateOrderStatus(@PathVariable(value = "id") Long id, @PathVariable(value = "status") String status) throws ResourceNotFoundException {
