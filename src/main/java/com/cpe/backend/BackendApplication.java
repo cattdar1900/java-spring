@@ -309,16 +309,16 @@ public class BackendApplication {
 			onOption4.setTotalPriceOp(5);
 			onOptionRepository.save(onOption4);
 			//order5
-//			OnOption onOption5 = new OnOption();
-//			onOption5.setOrder(order5);
-//			onOption5.setMenu(menu2);
-//			onOption5.setOption(option2);
-//			onOption5.setAmountMenu(1);
-//			onOption5.setAmountOption(1);
-//			onOption5.setTotalPrice(45);
-//			onOption5.setTotalPriceMenu(40);
-//			onOption5.setTotalPriceOp(5);
-//			onOptionRepository.save(onOption5);
+			OnOption onOption5 = new OnOption();
+			onOption5.setOrder(order5);
+			onOption5.setMenu(menu2);
+			onOption5.setOption(option2);
+			onOption5.setAmountMenu(1);
+			onOption5.setAmountOption(1);
+			onOption5.setTotalPrice(45);
+			onOption5.setTotalPriceMenu(40);
+			onOption5.setTotalPriceOp(5);
+			onOptionRepository.save(onOption5);
 
 			OnOption onOption6 = new OnOption();
 			onOption6.setOrder(order5);
