@@ -309,16 +309,16 @@ public class BackendApplication {
 			onOption4.setTotalPriceOp(5);
 			onOptionRepository.save(onOption4);
 			//order5
-//			OnOption onOption5 = new OnOption();
-//			onOption5.setOrder(order5);
-//			onOption5.setMenu(menu2);
-//			onOption5.setOption(option2);
-//			onOption5.setAmountMenu(1);
-//			onOption5.setAmountOption(1);
-//			onOption5.setTotalPrice(45);
-//			onOption5.setTotalPriceMenu(40);
-//			onOption5.setTotalPriceOp(5);
-//			onOptionRepository.save(onOption5);
+			OnOption onOption5 = new OnOption();
+			onOption5.setOrder(order5);
+			onOption5.setMenu(menu2);
+			onOption5.setOption(option2);
+			onOption5.setAmountMenu(1);
+			onOption5.setAmountOption(1);
+			onOption5.setTotalPrice(45);
+			onOption5.setTotalPriceMenu(40);
+			onOption5.setTotalPriceOp(5);
+			onOptionRepository.save(onOption5);
 
 			OnOption onOption6 = new OnOption();
 			onOption6.setOrder(order5);
@@ -341,6 +341,17 @@ public class BackendApplication {
 			onOption7.setTotalPriceMenu(40);
 			onOption7.setTotalPriceOp(5);
 			onOptionRepository.save(onOption7);
+
+			OnOption onOption8 = new OnOption();
+			onOption8.setOrder(order5);
+			onOption8.setMenu(menu3);
+			onOption8.setOption(option3);
+			onOption8.setAmountMenu(1);
+			onOption8.setAmountOption(1);
+			onOption8.setTotalPrice(45);
+			onOption8.setTotalPriceMenu(40);
+			onOption8.setTotalPriceOp(5);
+			onOptionRepository.save(onOption8);
 
 //		OnMainCourse
 			OnMainCourse onMainCourse1 = new OnMainCourse();

@@ -22,4 +22,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     @Query(value = "SELECT * FROM ORDERS WHERE STATUS = 'กำลังดำเนินการ' AND RIDER_ID = :rid",nativeQuery = true)
     Collection<Order> findOrdersByRiderId(@Param("rid") String rid);
+
+    @Query(value = "SELECT * FROM ORDERS WHERE STATUS = 'ดำเนินการเสร็จสิ้น' AND RIDER_ID = :rid",nativeQuery = true)
+    Collection<Order> findSuccessOrdersByRiderId(@Param("rid") String rid);
 }

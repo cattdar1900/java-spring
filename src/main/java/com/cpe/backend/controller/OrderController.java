@@ -45,6 +45,9 @@ public class OrderController {
     @GetMapping("/FindOrdersByRiderId/{rid}")
     public Collection<Order> FindOrdersByRiderId(@PathVariable String rid) { return OrderRepository.findOrdersByRiderId(rid); }
 
+    @GetMapping("/FindSuccessOrdersByRiderId/{rid}")
+    public Collection<Order> FindSuccessOrdersByRiderId(@PathVariable String rid) { return OrderRepository.findSuccessOrdersByRiderId(rid); }
+
     @PutMapping("/Order/{id}/{status}")
     public ResponseEntity<Order> updateOrderStatus(@PathVariable(value = "id") Long id, @PathVariable(value = "status") String status) throws ResourceNotFoundException {
         Order order1 = OrderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order not found for this id :: " + id));
